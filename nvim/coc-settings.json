@@ -1,0 +1,19 @@
+{
+  "snippets.textmateSnippetsRoots": ["~/.vim/vscode-snippets"],
+  "snippets.extends": {
+    "typescript": ["javascript"],
+    "javascriptreact": ["javascript"],
+    "typescriptreact": ["javascript", "typescript", "javascriptreact"]
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "graphql",
+    "css",
+    "html"
+  ]
+}

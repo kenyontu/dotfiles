@@ -9,6 +9,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
+" harpoon
+Plug 'ThePrimeagen/harpoon'
+
 " snippets
 "Plug 'sirver/ultisnips'
 
@@ -83,6 +86,12 @@ let g:netrw_banner = 0
 " telescope
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
 
+" harpoon
+nnoremap <leader>s :lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>i :lua require("harpoon.ui").nav_next()<CR>
+nnoremap <leader>o :lua require("harpoon.ui").nav_prev()<CR> 
+nnoremap <leader>h :lua require("harpoon.ui").toggle_quick_menu()<CR>
+
 " emmet-vim
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-e>'
@@ -105,6 +114,7 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-html',
   \ 'coc-snippets',
+  \ '@yaegassy/coc-tailwindcss3',
   \ ]
 
 nmap <silent> gd <Plug>(coc-definition)
