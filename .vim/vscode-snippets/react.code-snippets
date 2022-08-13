@@ -1,0 +1,101 @@
+{
+  "Import react named export": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "imn",
+    "body": [
+      "import {$0} from 'react'"
+    ]
+  },
+  "React stateless functional component": {
+    "scope": "javascript, javascriptreact",
+    "prefix": "rfc",
+    "body": [
+      "export function ${1:${TM_FILENAME_BASE}}({$2}) {",
+      "  return (",
+      "    $0",
+      "  )",
+      "}",
+    ]
+  },
+  "Typescript React stateless functional component": {
+    "scope": "typescriptreact",
+    "prefix": "trfc",
+    "body": [
+      "type Props = {",
+      "  $2",
+      "}",
+      "",
+      "export function ${1:${TM_FILENAME_BASE}}({$3}: Props) {",
+      "  return (",
+      "    <div>$0</div>",
+      "  )",
+      "}",
+    ]
+  },
+  "Typescript Context": {
+    "scope": "typescriptreact", 
+    "prefix": "tcon",
+    "body": [
+      "import { useState, useContext } from 'react'",
+      "",
+      "type ContextValue = {",
+      "  // TODO: add context types",
+      "}",
+      "",
+      "type ProviderProps = {",
+      "  children: React.ReactNode",
+      "}",
+      "",
+      "const $1Context = React.createContext<ContextValue | undefined>(undefined)",
+      "",
+      "const $1Provider = ({ children }: ProviderProps) => {",
+      "  // TODO: add context state",
+      "",
+      "  const value = {}",
+      "",
+      "  return (",
+      "    <$1Context.Provider value={value}>",
+      "      {children}",
+      "    </$1Context.Provider>",
+      "  )",
+      "}",
+      "",
+      "const use$1Context = () => {",
+      "  const value = useContext($1Context)",
+      "",
+      "  if (value === undefined)",
+      "    throw new Error('use$1Context should be used within a $1Provider')",
+      "",
+      "  return value as ContextValue",
+      "}",
+      "",
+      "export { $1Provider, use$1Context }"
+    ]
+  },
+  "Import React": {
+    "scope": "javascript",
+    "prefix": "imr",
+    "body": [
+      "import React from 'react'"
+    ]
+  },
+  "Import styled components": {
+    "scope": "javascript, javascript, typescriptreact",
+    "prefix": "imsc",
+    "body": [
+      "import styled, { css } from 'styled-components'"
+    ]
+  },
+  "Import css module": {
+    "scope": "javascript",
+    "prefix": "ims",
+    "body": [
+      "import styles from './${TM_FILENAME_BASE}.module.css'",
+    ]
+  },
+  "Classname": {
+    "scope": "javascript, javascriptreact, typescriptreact",
+    "prefix": "cn",
+    "body": ["className=\"$0\""]
+  }
+}

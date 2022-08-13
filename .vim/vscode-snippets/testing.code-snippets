@@ -1,0 +1,36 @@
+{
+  "describe": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "describe",
+    "body": [
+      "describe('$1', () => {",
+      "  $0",
+      "})"
+    ]
+  },
+  "test": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "test",
+    "body": [
+      "test('$1', () => {",
+      "  $0",
+      "})"
+    ]
+  },
+  "it": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "it",
+    "body": [
+      "it('$1', () => {",
+      "  $0",
+      "})"
+    ]
+  },
+  "testing-library/react common imports": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": "isc",
+    "body": [
+      "import { render, screen, fireEvent } from '@testing-library/react'"
+    ]
+  },
+} 
