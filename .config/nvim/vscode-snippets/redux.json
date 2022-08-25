@@ -1,6 +1,5 @@
 {
   "Redux starter kit slice": {
-    "scope": "typescriptreact",
     "prefix": "rslice",
     "body": [
       "import { createSlice, PayloadAction } from 'redux-starter-kit'",
@@ -27,12 +26,11 @@
     ]
   },
   "Redux toolkit slice reducer": {
-    "scope": "typescriptreact", 
     "prefix": "sred",
     "body": [
       "$1(state, action: PayloadAction<$2>) {",
       "  $0",
       "}"
     ]
-  },
+  }
 }

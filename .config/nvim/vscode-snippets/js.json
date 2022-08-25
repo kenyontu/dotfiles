@@ -1,0 +1,26 @@
+{
+  "console.log": {
+    "prefix": "cl",
+    "body": [
+      "console.log($0)"
+    ]
+  },
+  "import": {
+    "prefix": "im",
+    "body": [
+      "import $2 from '$1'"
+    ]
+  },
+  "import named export": {
+    "prefix": "imn",
+    "body": [
+      "import {$2} from '$1'"
+    ]
+  },
+  "require": {
+    "prefix": "req",
+    "body": [
+      "const $2 = require('$1')"
+    ]
+  }
+}

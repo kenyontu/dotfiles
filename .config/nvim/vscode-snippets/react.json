@@ -1,24 +1,21 @@
 {
   "Import react named export": {
-    "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "imn",
     "body": [
       "import {$0} from 'react'"
     ]
   },
   "React stateless functional component": {
-    "scope": "javascript, javascriptreact",
     "prefix": "rfc",
     "body": [
       "export function ${1:${TM_FILENAME_BASE}}({$2}) {",
       "  return (",
       "    $0",
       "  )",
-      "}",
+      "}"
     ]
   },
   "Typescript React stateless functional component": {
-    "scope": "typescriptreact",
     "prefix": "trfc",
     "body": [
       "type Props = {",
@@ -29,11 +26,10 @@
       "  return (",
       "    <div>$0</div>",
       "  )",
-      "}",
+      "}"
     ]
   },
   "Typescript Context": {
-    "scope": "typescriptreact", 
     "prefix": "tcon",
     "body": [
       "import { useState, useContext } from 'react'",
@@ -73,29 +69,27 @@
     ]
   },
   "Import React": {
-    "scope": "javascript",
     "prefix": "imr",
     "body": [
       "import React from 'react'"
     ]
   },
   "Import styled components": {
-    "scope": "javascript, javascript, typescriptreact",
     "prefix": "imsc",
     "body": [
       "import styled, { css } from 'styled-components'"
     ]
   },
   "Import css module": {
-    "scope": "javascript",
     "prefix": "ims",
     "body": [
-      "import styles from './${TM_FILENAME_BASE}.module.css'",
+      "import styles from './${TM_FILENAME_BASE}.module.css'"
     ]
   },
   "Classname": {
-    "scope": "javascript, javascriptreact, typescriptreact",
     "prefix": "cn",
-    "body": ["className=\"$0\""]
+    "body": [
+      "className=\"$0\""
+    ]
   }
 }
