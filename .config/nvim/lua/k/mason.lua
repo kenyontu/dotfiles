@@ -10,6 +10,9 @@ mlspconfig.setup {
     "html-lsp",
     "typescript-language-server",
     "eslint_d",
-    "prettierd"
+    "prettierd",
+    "css-ls",
+    "emmet-ls",
+    "rust-analyzer"
   },
 }

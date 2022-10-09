@@ -12,6 +12,9 @@ fi
 
 # Aliases
 alias bs="browser-sync start --server --files \".\""
+alias gs="git status"
+alias pr="node ~/utils/px-to-rem.js"
+alias fo="node ~/utils/file-organizer.js"
 
 export FLYCTL_INSTALL="/home/k/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"

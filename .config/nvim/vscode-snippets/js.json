@@ -22,5 +22,17 @@
     "body": [
       "const $2 = require('$1')"
     ]
+  },
+  "getElementById": {
+    "prefix": "gid",
+    "body": [
+      "const $0 = document.getElementById(\"$1\")"
+    ]
+  },
+  "createElement": {
+    "prefix": "cre",
+    "body": [
+      "const $0 = document.createElement(\"$1\")"
+    ]
   }
 }

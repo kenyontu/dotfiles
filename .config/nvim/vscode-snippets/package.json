@@ -40,6 +40,13 @@
           "typescriptreact"
         ],
         "path": "./testing.json"
+      },
+      {
+        "language": [
+          "css",
+          "scss"
+        ],
+        "path": "./css.json"
       }
     ]
   }

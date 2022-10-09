@@ -27,12 +27,14 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lspconfig = require 'lspconfig'
+local configs = require 'lspconfig.configs'
 
 lspconfig['tsserver'].setup{
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities
 }
@@ -46,7 +48,32 @@ lspconfig['rust_analyzer'].setup {
   capabilities = capabilities
 }
 
-lspconfig['tailwindcss'].setup {}
+lspconfig['tailwindcss'].setup { capabilities = capabilities }
+
+lspconfig.html.setup {
+  capabilities = capabilities,
+}
+
+if not configs.ls_emmet then
+  configs.ls_emmet = {
+    default_config = {
+      cmd = { 'ls_emmet', '--stdio' };
+      filetypes = {
+        'html',
+        'javascriptreact',
+        'typescriptreact',
+      };
+      root_dir = function(fname)
+        return vim.loop.cwd()
+      end;
+      settings = {};
+    };
+  }
+end
+
+lspconfig['ls_emmet'].setup { capabilities = capabilities }
+
+lspconfig['cssls'].setup { capabilities = capabilities }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -66,7 +93,7 @@ end
 
 vim.diagnostic.config({
   virtual_text = {
-    prefix = '●'
+   -- prefix = '●'
   },
   update_in_insert = true,
   float = {
@@ -81,6 +108,7 @@ local status, saga = pcall(require, "lspsaga")
 if (not status) then return end
 
 saga.init_lsp_saga {
+  code_action_icon = "",
   server_filetype_map = {
     typescript = 'typescript'
   }

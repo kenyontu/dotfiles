@@ -1,6 +1,7 @@
 local ts = require "nvim-treesitter.configs"
 
 ts.setup {
+  auto_install = true,
   highlight = {
     enable = true,
     disable = {},
@@ -16,7 +17,8 @@ ts.setup {
     "yaml",
     "css",
     "html",
-    "lua"
+    "lua",
+    "rust"
   },
   autotag = {
     enable = true,

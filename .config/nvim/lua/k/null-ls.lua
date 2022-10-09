@@ -4,14 +4,16 @@ local nlsb = nls.builtins
 nls.setup({
   sources = {
     -- diagnostics
-    nlsb.diagnostics.eslint_d.with({
-      diagnostics_format = '[eslint] #{m}\n(#{c})'
-    }),
+    -- nlsb.diagnostics.eslint_d.with({
+    --  diagnostics_format = '[eslint] #{m}\n(#{c})'
+    --}),
+    nlsb.diagnostics.eslint,
     nlsb.diagnostics.write_good, -- for markdown
     nlsb.diagnostics.jsonlint,
 
     -- formatting
     nlsb.formatting.prettierd,
+    nlsb.formatting.rustfmt,
     nlsb.formatting.fixjson,
   },
   on_attach = function(client, bufnr)
