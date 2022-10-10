@@ -4,21 +4,26 @@ local nlsb = nls.builtins
 nls.setup({
   sources = {
     -- diagnostics
-    -- nlsb.diagnostics.eslint_d.with({
-    --  diagnostics_format = '[eslint] #{m}\n(#{c})'
-    --}),
     nlsb.diagnostics.eslint,
     nlsb.diagnostics.write_good, -- for markdown
     nlsb.diagnostics.jsonlint,
 
     -- formatting
-    nlsb.formatting.prettierd,
-    nlsb.formatting.rustfmt,
-    nlsb.formatting.fixjson,
+    nlsb.formatting.prettierd, -- js and ts
+    nlsb.formatting.rustfmt, -- rust
+    nlsb.formatting.fixjson, -- json
+    nlsb.formatting.autopep8 -- python
   },
   on_attach = function(client, bufnr)
-    if client.resolved_capabilities.document_formatting then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
+    if client.supports_method("textDocument/formatting") then
+      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = bufnr })
+        end,
+      })
     end
   end,
 })

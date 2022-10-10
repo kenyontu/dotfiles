@@ -30,3 +30,9 @@ ln -sv ~/dotfiles/.config/nvim/vscode-snippets/js.json ~/.config/nvim/vscode-sni
 ln -sv ~/dotfiles/.config/nvim/vscode-snippets/react.json ~/.config/nvim/vscode-snippets/react.json
 ln -sv ~/dotfiles/.config/nvim/vscode-snippets/redux.json ~/.config/nvim/vscode-snippets/redux.json
 ln -sv ~/dotfiles/.config/nvim/vscode-snippets/testing.json ~/.config/nvim/vscode-snippets/testing.json
+
+# Python packages
+
+# https://github.com/hhatto/autopep8
+# Python auto formatter
+pip3 install --upgrade autopep8

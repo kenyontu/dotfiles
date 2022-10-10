@@ -12,6 +12,7 @@ keymap('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 --keymap('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
 --keymap('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 keymap("n", "<leader>c", "<cmd>Lspsaga code_action<CR>", opts)
+keymap("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Disabling since I only need to jump between errors
 -- keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
@@ -39,10 +40,10 @@ keymap('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], 
 require('leap').set_default_keymaps()
 
 -- Harpoon
-keymap('n', '<leader>h', function()
+keymap('n', '<leader>a', function()
   require("harpoon.mark").add_file()
 end, opts)
-keymap('n', '<leader>a', function()
+keymap('n', '<leader>h', function()
   require("harpoon.ui").toggle_quick_menu()
 end, opts)
 keymap('n', '<leader>n', function()
