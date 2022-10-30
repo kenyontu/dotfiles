@@ -54,25 +54,6 @@ lspconfig.html.setup {
   capabilities = capabilities,
 }
 
-if not configs.ls_emmet then
-  configs.ls_emmet = {
-    default_config = {
-      cmd = { 'ls_emmet', '--stdio' };
-      filetypes = {
-        'html',
-        'javascriptreact',
-        'typescriptreact',
-      };
-      root_dir = function(fname)
-        return vim.loop.cwd()
-      end;
-      settings = {};
-    };
-  }
-end
-
-lspconfig['ls_emmet'].setup { capabilities = capabilities }
-
 lspconfig['cssls'].setup { capabilities = capabilities }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

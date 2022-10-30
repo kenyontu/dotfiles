@@ -54,6 +54,8 @@ require("transparent").setup({
 })
 ]]--
 
+
+
 -- Toggleterm
 require("toggleterm").setup()
 
@@ -81,6 +83,10 @@ function _lazygit_toggle()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+
+-- Emmet 
+vim.g["user_emmet_mode"] = 'i'
+vim.g["user_emmet_leader_key"] = '<leader>' -- A prefix, actual command is: <space>,
 
 -- Codi
 vim.g["codi#virtual_text"] = 0

@@ -31,9 +31,7 @@ packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
 
   -- Emmet
-  use 'pedro757/emmet'
-  -- Requires ls_emmet
-  -- npm install -g ls_emmet
+  use 'mattn/emmet-vim'
 
   -- Prettier
   use 'MunifTanjim/prettier.nvim'
