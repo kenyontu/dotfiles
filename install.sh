@@ -19,7 +19,6 @@ ln -sv ~/dotfiles/.config/nvim/lua/k/lsp.lua ~/.config/nvim/lua/k/
 ln -sv ~/dotfiles/.config/nvim/lua/k/cmp.lua ~/.config/nvim/lua/k/
 ln -sv ~/dotfiles/.config/nvim/lua/k/telescope.lua ~/.config/nvim/lua/k/
 ln -sv ~/dotfiles/.config/nvim/lua/k/treesitter.lua ~/.config/nvim/lua/k/
-ln -sv ~/dotfiles/.config/nvim/lua/k/prettier.lua ~/.config/nvim/lua/k/
 ln -sv ~/dotfiles/.config/nvim/lua/k/null-ls.lua ~/.config/nvim/lua/k/
 ln -sv ~/dotfiles/.config/nvim/lua/k/mason.lua ~/.config/nvim/lua/k/
 ln -sv ~/dotfiles/.config/nvim/lua/k/keymap.lua ~/.config/nvim/lua/k/

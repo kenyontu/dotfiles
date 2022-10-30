@@ -9,9 +9,7 @@ nls.setup({
     nlsb.diagnostics.jsonlint,
 
     -- formatting
-    nlsb.formatting.prettierd, -- js and ts
-    nlsb.formatting.rustfmt, -- rust
-    nlsb.formatting.fixjson, -- json
+    nlsb.formatting.dprint,
     nlsb.formatting.autopep8 -- python
   },
   on_attach = function(client, bufnr)

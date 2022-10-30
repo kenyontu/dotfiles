@@ -33,9 +33,6 @@ packer.startup(function(use)
   -- Emmet
   use 'mattn/emmet-vim'
 
-  -- Prettier
-  use 'MunifTanjim/prettier.nvim'
-  
   -- Tree sitter
   use {
     'nvim-treesitter/nvim-treesitter',
