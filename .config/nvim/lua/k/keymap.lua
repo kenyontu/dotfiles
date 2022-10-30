@@ -2,8 +2,17 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Leader key keymaps
-keymap("n", "<leader>w", ":w<CR>", opts)
-keymap("n", "<leader>q", ":q<CR>", opts)
+keymap("n", "<space>w", ":w<CR>", opts)
+keymap("n", "<space>q", ":q<CR>", opts)
+
+-- Clears search highlight
+keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", default_options)
+
+-- Change panes
+keymap('n', '<C-j>', '<C-W>j')
+keymap('n', '<C-k>', '<C-W>k')
+keymap('n', '<C-h>', '<C-W>h')
+keymap('n', '<C-l>', '<C-W>l')
 
 -- lspsaga
 keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
@@ -11,7 +20,7 @@ keymap('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 --keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
 --keymap('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
 --keymap('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
-keymap("n", "<leader>c", "<cmd>Lspsaga code_action<CR>", opts)
+keymap("n", "<leader>a", "<cmd>Lspsaga code_action<CR>", opts)
 keymap("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Disabling since I only need to jump between errors
@@ -26,12 +35,6 @@ keymap("n", ";r", function()
   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, opts)
 
--- Change panes
-keymap('n', '<C-j>', '<C-W>j')
-keymap('n', '<C-k>', '<C-W>k')
-keymap('n', '<C-h>', '<C-W>h')
-keymap('n', '<C-l>', '<C-W>l')
-
 -- Telescope
 -- Open Telescope
 keymap('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], opts)
@@ -40,18 +43,12 @@ keymap('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], 
 require('leap').set_default_keymaps()
 
 -- Harpoon
-keymap('n', '<leader>a', function()
-  require("harpoon.mark").add_file()
-end, opts)
-keymap('n', '<leader>h', function()
-  require("harpoon.ui").toggle_quick_menu()
-end, opts)
-keymap('n', '<leader>n', function()
-  require("harpoon.ui").nav_next()   
-end, opts)
-keymap('n', '<leader>p', function()
-  require("harpoon.ui").nav_prev()   
-end, opts)
+keymap('n', '<space>g', [[<Cmd>lua require('harpoon.mark').add_file()<CR>]], opts)
+keymap('n', '<space>h', [[<Cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>]], opts)
+keymap('n', '<space>j', [[<Cmd>lua require('harpoon.ui').nav_file(1)<CR>]], opts)
+keymap('n', '<space>k', [[<Cmd>lua require('harpoon.ui').nav_file(2)<CR>]], opts)
+keymap('n', '<space>l', [[<Cmd>lua require('harpoon.ui').nav_file(3)<CR>]], opts)
+keymap('n', '<space>;', [[<Cmd>lua require('harpoon.ui').nav_file(4)<CR>]], opts)
 
 -- Toggleterm
 keymap('n', '<leader>tt', ':ToggleTerm dir=git_dir direction=float<CR>', opts)
