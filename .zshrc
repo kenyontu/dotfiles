@@ -21,6 +21,15 @@ alias dot="cd ~/dotfiles/;nvim ."
 alias tw="the-way search"
 alias twa="the-way new"
 
+# Taskwarrior aliases
+alias t="task"
+alias ta="task add"
+alias tn="while true; do clear && task next limit:5; sleep 5; done"
+
+# pacmd aliases
+alias sinks="pacmd list-sinks | awk '/index:/ {print \$0} /name:/ {print \$0};'"
+alias ssink="pacmd set-default-sink"
+
 export FLYCTL_INSTALL="/home/k/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
