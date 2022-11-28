@@ -86,10 +86,75 @@
       "import styles from './${TM_FILENAME_BASE}.module.css'"
     ]
   },
+  "Import scss module": {
+    "prefix": "imss",
+    "body": [
+      "import styles from './${TM_FILENAME_BASE}.module.scss'"
+    ]
+  },
   "Classname": {
     "prefix": "cn",
     "body": [
-      "className=\"$0\""
+      "className={$0}"
+    ]
+  },
+  "Nextjs getServerSideProps": {
+    "prefix": "nssr",
+    "body": [
+      "export const getServerSideProps = (context) => {",
+      "  $0",
+      "  return {",
+      "    props: {}",
+      "  }",
+      "}"
+    ]
+  },
+  "Nextjs getStaticProps": {
+    "prefix": "nssg",
+    "body": [
+      "export const getStaticProps = (context) => {",
+      "  $0",
+      "  return {",
+      "    props: {}",
+      "  }",
+      "}"
+    ]
+  },
+  "Nextjs TS getServerSideProps": {
+    "prefix": "nssrt",
+    "body": [
+      "export const getServerSideProps: GetServerSideProps = (context) => {",
+      "  $0",
+      "  return {",
+      "    props: {}",
+      "  }",
+      "}"
+    ]
+  },
+  "Nextjs TS getStaticProps": {
+    "prefix": "nssgt",
+    "body": [
+      "export const getStaticProps: GetStaticProps = (context) => {",
+      "  $0",
+      "  return {",
+      "    props: {}",
+      "  }",
+      "}"
+    ]
+  },
+  "Nextjs TS Page": {
+    "prefix": "npt",
+    "body": [
+      "import type { NextPage } from 'next'",
+      "import Head from 'next/head'",
+      "",
+      "type PageProps = {}",
+      "",
+      "const Page: NextPage<PageProps> = ({}) => {",
+      "  return <></>",
+      "}",
+      "",
+      "export default Page"
     ]
   }
 }

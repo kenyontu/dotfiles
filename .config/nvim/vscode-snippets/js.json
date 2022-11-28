@@ -34,5 +34,31 @@
     "body": [
       "const $0 = document.createElement(\"$1\")"
     ]
+  },
+  "tryCatch": {
+    "prefix": "tr",
+    "body": [
+      "try {",
+      "$0",
+      "} catch(error) {",
+      "",
+      "}"
+    ]
+  },
+  "express app setup": {
+    "prefix": "express",
+    "body": [
+      "import express from 'express'",
+      "import cors from 'cors'",
+      "",
+      "const app = express()",
+      "",
+      "app.use(cors)",
+      "app.use(express.json())",
+      "app.use(express.urlencoded({ extended: true }))",
+      "",
+      "const PORT = process.env.PORT || 3000",
+      "app.listen(PORT, () => console.info(`Server started at port ${PORT}`))"
+    ]
   }
 }
