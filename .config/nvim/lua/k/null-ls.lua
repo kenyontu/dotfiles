@@ -9,7 +9,28 @@ nls.setup({
     nlsb.diagnostics.jsonlint,
 
     -- formatting
-    nlsb.formatting.dprint,
+    nlsb.formatting.dprint.with({
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "json",
+        "markdown",
+        "toml",
+      }
+    }),
+    nlsb.formatting.prettierd.with({
+      filetypes = {
+        "css",
+        "scss",
+        "less",
+        "html",
+        "graphql",
+        "vue"
+      }
+    }),
+    nlsb.formatting.rustfmt,
     nlsb.formatting.autopep8 -- python
   },
   on_attach = function(client, bufnr)

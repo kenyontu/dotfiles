@@ -54,8 +54,6 @@ require("transparent").setup({
 })
 ]]--
 
-
-
 -- Toggleterm
 require("toggleterm").setup()
 
