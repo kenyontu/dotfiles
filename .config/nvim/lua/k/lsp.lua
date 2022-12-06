@@ -1,6 +1,8 @@
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.api.nvim_buf_set_option(bufnr, 'tagfunc', 'v:lua.vim.lsp.tagfunc')
   -- Enable completion triggered by <c-x><c-o>
   --vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -34,29 +36,36 @@ local configs = require 'lspconfig.configs'
 
 lspconfig['tsserver'].setup{
   on_attach = on_attach,
-  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" },
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 lspconfig['rust_analyzer'].setup {
   on_attach = on_attach,
-  -- Server-specific settings...
+  capabilities = capabilities,
   settings = {
     ["rust-analyzer"] = {}
   },
-  capabilities = capabilities
 }
 
-lspconfig['tailwindcss'].setup { capabilities = capabilities }
-
-lspconfig.html.setup {
+lspconfig['tailwindcss'].setup {
+  on_attach = on_attach,
   capabilities = capabilities,
 }
 
-lspconfig['cssls'].setup { capabilities = capabilities }
+lspconfig.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
-lspconfig["prismals"].setup {}
+lspconfig['cssls'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig["prismals"].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
