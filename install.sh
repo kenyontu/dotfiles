@@ -7,6 +7,7 @@ ln -sv ~/dotfiles/.prettierrc ~
 
 mkdir ~/.config/kitty
 ln -sv ~/dotfiles/.config/kitty/kitty.conf ~/.config/kitty/
+ln -sv ~/dotfiles/.config/kitty/macchiato.conf ~/.config/kitty/
 ln -sv ~/dotfiles/.config/kitty/theme.conf ~/.config/kitty/
 
 mkdir ~/.config/nvim
