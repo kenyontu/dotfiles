@@ -1,5 +1,9 @@
 # My dotfiles
 
-Based on [Takuya](https://github.com/craftzdog/dotfiles-public)'s dotfiles.
+In this repo you will find some of my basic dotfile configs.
 
-Some configs are specifically made for [Manjaro Linux](https://manjaro.org/) and might not work on other systems without changes.
+## Inspired by
+
+- [Takuya](https://github.com/craftzdog/dotfiles-public)
+- [ThePrimeagen](https://github.com/ThePrimeagen/.dotfiles)
+
