@@ -7,12 +7,11 @@ mlspconfig.setup {
   ensure_installed = {
     "sumneko_lua",
     "tailwindcss",
-    "html-lsp",
-    "typescript-language-server",
-    "eslint_d",
-    "prettierd",
-    "css-ls",
-    "emmet-ls",
-    "rust-analyzer"
+    "html",
+    "tsserver",
+    "eslint",
+    "cssls",
+    "emmet_ls",
+    "rust_analyzer"
   },
 }
