@@ -29,6 +29,7 @@ ln -sv ~/dotfiles/.config/nvim/vscode-snippets/js.json ~/.config/nvim/vscode-sni
 ln -sv ~/dotfiles/.config/nvim/vscode-snippets/react.json ~/.config/nvim/vscode-snippets/react.json
 ln -sv ~/dotfiles/.config/nvim/vscode-snippets/redux.json ~/.config/nvim/vscode-snippets/redux.json
 ln -sv ~/dotfiles/.config/nvim/vscode-snippets/testing.json ~/.config/nvim/vscode-snippets/testing.json
+ln -sv ~/dotfiles/.config/nvim/vscode-snippets/prisma_schema.json ~/.config/nvim/vscode-snippets/prisma_schema.json
 
 # Python packages
 
