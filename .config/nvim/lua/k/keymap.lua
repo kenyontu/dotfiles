@@ -14,6 +14,8 @@ keymap('n', '<C-k>', '<C-W>k')
 keymap('n', '<C-h>', '<C-W>h')
 keymap('n', '<C-l>', '<C-W>l')
 
+-- Diagnostics
+keymap("n", "<leader>d", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
 -- Disabling keybinds that I don't use to avoid misclicks
 keymap('n', 'Q', '<Nop>', opts)
@@ -35,7 +37,7 @@ keymap('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 --keymap('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
 --keymap('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 keymap("n", "<leader>a", "<cmd>Lspsaga code_action<CR>", opts)
-keymap("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+--keymap("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 
 -- Disabling since I only need to jump between errors
 -- keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
