@@ -1,7 +1,0 @@
-[user]
-	name = kenyontu
-	email = kenyontu@outlook.com
-[core]
-	editor = nvim
-[init]
-	defaultBranch = main
