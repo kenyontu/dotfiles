@@ -58,9 +58,7 @@ cmp.setup({
   }
 })
 
-if vim.fn.filereadable('./vscode-snippets/package.json') == 1 then
-  require('luasnip.loaders.from_vscode').load({ paths = { "./vscode-snippets" }})
-end
+require('luasnip.loaders.from_vscode').load({ paths = { "~/.config/nvim/vscode-snippets" }})
 
 vim.cmd [[
   set completeopt=menuone,noinsert,noselect

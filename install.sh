@@ -31,11 +31,6 @@ ln -sf ~/dotfiles/.config/nvim/lua/k/keymap.lua ~/.config/nvim/lua/k/
 
 mkdir ~/.config/nvim/vscode-snippets
 ln -sf ~/dotfiles/.config/nvim/vscode-snippets/package.json ~/.config/nvim/vscode-snippets/
-ln -sf ~/dotfiles/.config/nvim/vscode-snippets/js.json ~/.config/nvim/vscode-snippets/
-ln -sf ~/dotfiles/.config/nvim/vscode-snippets/react.json ~/.config/nvim/vscode-snippets/
-ln -sf ~/dotfiles/.config/nvim/vscode-snippets/redux.json ~/.config/nvim/vscode-snippets/
-ln -sf ~/dotfiles/.config/nvim/vscode-snippets/testing.json ~/.config/nvim/vscode-snippets/
-ln -sf ~/dotfiles/.config/nvim/vscode-snippets/prisma_schema.json ~/.config/nvim/vscode-snippets/
 
 # Ranger
 
@@ -50,4 +45,4 @@ ln -sf ~/dotfiles/.config/ranger/commands_full.py ~/.config/ranger/
 
 # https://github.com/hhatto/autopep8
 # Python auto formatter
-pip3 install --upgrade autopep8
+# pip3 install --upgrade autopep8
