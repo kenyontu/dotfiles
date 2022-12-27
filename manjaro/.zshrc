@@ -1,5 +1,6 @@
 # Use powerline
 USE_POWERLINE="true"
+
 # Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
@@ -29,8 +30,5 @@ alias tn="while true; do clear && task next limit:5; sleep 5; done"
 # pacmd aliases
 alias sinks="pacmd list-sinks | awk '/index:/ {print \$0} /name:/ {print \$0};'"
 alias ssink="pacmd set-default-sink"
-
-export FLYCTL_INSTALL="/home/k/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 export PATH=~/bin:$PATH
