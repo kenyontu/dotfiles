@@ -82,7 +82,7 @@ keymap('n', '<space>;', [[<Cmd>lua require('harpoon.ui').nav_file(4)<CR>]], opts
 -- Toggleterm
 -- //////////////
 
-keymap('n', '<space>t', ':ToggleTerm dir=git_dir direction=float<CR>', opts)
+keymap('n', '<space>t', ':ToggleTerm dir=git_dir direction=horizontal<CR>', opts)
 --keymap('t', '<esc>', [[<C-\><C-n>]], opts)
 keymap('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
 keymap('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
