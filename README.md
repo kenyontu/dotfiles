@@ -35,3 +35,15 @@ A good way to store:
 4. Open the config file and change the value of `copy_cmd` to `'xsel -ib'`
 
 I use `xsel` because `xclip` is not able to copy the snippet from within Neovim inside a `toggleterm` terminal.
+
+### Lazygit
+
+TUI Git client.
+
+https://github.com/jesseduffield/lazygit
+
+#### Setup (Arch)
+
+```bash
+pacman -S lazygit
+```
