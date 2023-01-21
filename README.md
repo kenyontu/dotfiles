@@ -31,6 +31,7 @@ A good way to store:
 
 1. Install `the-way` with `cargo install the-way`
 2. Install `xsel` with `pacman -S xsel`
-3. Open `~/.config/the-way/the-way.toml` and change the value of `copy_cmd` to `'xsel -ib'`
+3. Run `the-way config get` to print the-way's config file path
+4. Open the config file and change the value of `copy_cmd` to `'xsel -ib'`
 
-I use `xsel` instead of the default `xclip`, because I open the-way inside Neovim using `toggleterm` and `xclip` wasn't able to copy the snippet to the clipboard with this method
+I use `xsel` because `xclip` is not able to copy the snippet from within Neovim inside a `toggleterm` terminal.
