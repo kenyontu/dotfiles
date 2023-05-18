@@ -70,11 +70,51 @@ packer.startup(function(use)
   --use "xiyaowong/nvim-transparent"
 
   -- Terminal
-  use {"akinsho/toggleterm.nvim", tag = '*'}
+  use {"akinsho/toggleterm.nvim", tag = "*"}
 
   -- Prototyping & Repl
   use "metakirby5/codi.vim"
 
   -- Rust
   -- use "simrat39/rust-tools.nvim"
+
+  -- Copilot
+  use {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+
+      require("copilot").setup({
+        panel = {
+          enabled = true,
+          auto_refresh = false,
+          keymap = {
+            accept = false,
+            jump_prev = false,
+            jump_next = false,
+            refresh = false,
+            open = false,
+          },
+        },
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          keymap = {
+            accept = "<C-g>",
+            accept_word = false,
+            accept_line = false,
+            next = false,
+            prev = false,
+            dismiss = false,
+          },
+        },
+      })
+
+    end,
+  }
+
+  -- Aerial
+  -- A plugin for displaying the outline of the current file in a floating window
+  use "stevearc/aerial.nvim"
 end)

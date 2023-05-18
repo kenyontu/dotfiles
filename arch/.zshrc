@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -72,7 +72,7 @@ ZSH_THEME="refined"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -102,14 +102,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Use powerline
 USE_POWERLINE="true"
-# Source manjaro-zsh-configuration
-if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-  source /usr/share/zsh/manjaro-zsh-config
-fi
-# Use manjaro zsh prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-  source /usr/share/zsh/manjaro-zsh-prompt
-fi
 
 export EDITOR=nvim
 
@@ -131,8 +123,5 @@ alias tn="while true; do clear && task next limit:5; sleep 5; done"
 # pacmd aliases
 alias sinks="pacmd list-sinks | awk '/index:/ {print \$0} /name:/ {print \$0};'"
 alias ssink="pacmd set-default-sink"
-
-export FLYCTL_INSTALL="/home/k/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 export PATH=~/bin:$PATH

@@ -30,8 +30,9 @@ nls.setup({
         "vue"
       }
     }),
-    nlsb.formatting.rustfmt,
-    nlsb.formatting.autopep8 -- python
+    nlsb.formatting.rustfmt, -- rust
+    nlsb.formatting.autopep8, -- python
+    nlsb.formatting.dart_format,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then

@@ -27,6 +27,7 @@ vim.api.nvim_create_user_command('W', 'w', {})
 -- Runs :q when typing :Q 
 vim.api.nvim_create_user_command('Q', 'q', {})
 
+
 -- //////////////
 -- lspsaga
 -- //////////////
@@ -56,10 +57,11 @@ end, opts)
 -- //////////////
 
 -- Git files
-keymap('n', '<C-p>', [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], opts)
+keymap("n", "<C-p>", [[<Cmd>lua require("telescope.builtin").git_files()<CR>]], opts)
 -- File browser
-keymap("n", "-", [[<Cmd>lua require('telescope').extensions.file_browser.file_browser({})<CR>]], opts)
---  telescope.extensions.file_browser.file_browser({})
+keymap("n", "-", [[<Cmd>lua require("telescope").extensions.file_browser.file_browser({})<CR>]], opts)
+-- Aerial
+keymap("n", "<space>o", [[<Cmd>lua require("telescope").extensions.aerial.aerial()<CR>]], opts)
 
 -- //////////////
 -- Leap
@@ -82,13 +84,24 @@ keymap('n', '<space>;', [[<Cmd>lua require('harpoon.ui').nav_file(4)<CR>]], opts
 -- Toggleterm
 -- //////////////
 
-keymap('n', '<space>t', ':ToggleTerm dir=git_dir direction=horizontal<CR>', opts)
---keymap('t', '<esc>', [[<C-\><C-n>]], opts)
-keymap('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-keymap('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-keymap('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-keymap('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+keymap('n', '<space>t', ':ToggleTerm dir=git_dir direction=float<CR>', opts)
 keymap('n', '<leader>t', ':ToggleTermSendCurrentLine<CR>')
 keymap('v', '<leader>t', ':ToggleTermSendVisualLines<CR>')
 
+function _G.set_terminal_keymaps()
+  local opts = {buffer = 0}
+  -- <esc> is used by lazygit, so we cannot remap it
+  --keymap('t', '<esc>', [[<C-\><C-n>]], opts)
+  keymap('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+  keymap('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+  keymap('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+  keymap('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+end
+
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+-- //////////////
+-- Copilot
+-- //////////////
+--keymap("i", "<C-n>", require("copilot.suggestion").accept, {noremap = true})
 
