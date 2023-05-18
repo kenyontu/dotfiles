@@ -111,3 +111,11 @@ vim.g["codi#autoclose"] = 1
 
 -- nvim-comment
 require("nvim_comment").setup()
+
+-- Aerial
+require('aerial').setup()
+-- You probably also want to set a keymap to toggle aerial
+vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
+
+  --vim.("i", "<C-b>", [[<Cmd>lua require('copilot.suggestion').accept()<CR>]], {noremap = true, silent = true})
+

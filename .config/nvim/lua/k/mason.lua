@@ -5,7 +5,6 @@ mason.setup({})
 
 mlspconfig.setup {
   ensure_installed = {
-    "sumneko_lua",
     "tailwindcss",
     "html",
     "tsserver",

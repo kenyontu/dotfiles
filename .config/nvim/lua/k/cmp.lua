@@ -20,7 +20,7 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true
+      select = false 
     }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -45,12 +45,19 @@ cmp.setup({
   }),
   formatting = {
     format = lspkind.cmp_format({
-      with_text = false,
       mode = 'symbol', 
-      maxwidth = 50
+      maxwidth = 50,
     })
   }
 })
+
+cmp.event:on("menu_opened", function()
+  vim.b.copilot_suggestion_hidden = true
+end)
+
+cmp.event:on("menu_closed", function()
+  vim.b.copilot_suggestion_hidden = false
+end)
 
 require('luasnip.loaders.from_vscode').load({ paths = { "~/.config/nvim/vscode-snippets" }})
 
