@@ -6,26 +6,12 @@ ln -sf ~/dotfiles/.prettierrc ~
 
 # Kitty
 
-mkdir ~/.config/kitty
-ln -sf ~/dotfiles/.config/kitty/kitty.conf ~/.config/kitty/
-ln -sf ~/dotfiles/.config/kitty/macchiato.conf ~/.config/kitty/
-ln -sf ~/dotfiles/.config/kitty/theme.conf ~/.config/kitty/
+ln -s ~/dotfiles/.config/kitty/ ~/.config/kitty/
 
 # Neovim
 
 mkdir ~/.config/nvim
-mkdir ~/.config/nvim/lua
-mkdir ~/.config/nvim/lua/k
-ln -sf ~/dotfiles/.config/nvim/init.lua ~/.config/nvim/
-ln -sf ~/dotfiles/.config/nvim/lua/k/plugins.lua ~/.config/nvim/lua/k/
-ln -sf ~/dotfiles/.config/nvim/lua/k/base.lua ~/.config/nvim/lua/k/
-ln -sf ~/dotfiles/.config/nvim/lua/k/lsp.lua ~/.config/nvim/lua/k/
-ln -sf ~/dotfiles/.config/nvim/lua/k/cmp.lua ~/.config/nvim/lua/k/
-ln -sf ~/dotfiles/.config/nvim/lua/k/telescope.lua ~/.config/nvim/lua/k/
-ln -sf ~/dotfiles/.config/nvim/lua/k/treesitter.lua ~/.config/nvim/lua/k/
-ln -sf ~/dotfiles/.config/nvim/lua/k/null-ls.lua ~/.config/nvim/lua/k/
-ln -sf ~/dotfiles/.config/nvim/lua/k/mason.lua ~/.config/nvim/lua/k/
-ln -sf ~/dotfiles/.config/nvim/lua/k/keymap.lua ~/.config/nvim/lua/k/
+ln -s ~/dotfiles/.config/nvim/lua/ ~/.config/nvim/lua/
 
 # Snippets
 
@@ -35,11 +21,7 @@ ln -sf ~/dotfiles/.config/nvim/vscode-snippets/package.json ~/.config/nvim/vscod
 # Ranger
 
 mkdir ~/.config/ranger
-ln -sf ~/dotfiles/.config/ranger/rc.conf ~/.config/ranger/
-ln -sf ~/dotfiles/.config/ranger/rifle.conf ~/.config/ranger/
-ln -sf ~/dotfiles/.config/ranger/scope.sh ~/.config/ranger/
-ln -sf ~/dotfiles/.config/ranger/commands.py ~/.config/ranger/
-ln -sf ~/dotfiles/.config/ranger/commands_full.py ~/.config/ranger/
+ln -s ~/dotfiles/.config/ranger/ ~/.config/ranger/
 
 # Python packages
 
