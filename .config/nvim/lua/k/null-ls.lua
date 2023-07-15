@@ -28,7 +28,10 @@ nls.setup({
         "html",
         "graphql",
         "vue"
-      }
+      },
+      extra_filetypes = { 
+        "svelte",
+      },
     }),
     nlsb.formatting.rustfmt, -- rust
     nlsb.formatting.autopep8, -- python

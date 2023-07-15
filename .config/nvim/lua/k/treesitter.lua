@@ -20,7 +20,8 @@ ts.setup {
     "lua",
     "rust",
     "markdown",
-    "markdown_inline"
+    "markdown_inline",
+    "svelte"
   },
   autotag = {
     enable = true,

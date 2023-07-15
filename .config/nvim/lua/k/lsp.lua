@@ -41,7 +41,11 @@ lspconfig['tsserver'].setup{
 lspconfig['rust_analyzer'].setup {
   capabilities = capabilities,
   settings = {
-    ["rust-analyzer"] = {}
+    ["rust-analyzer"] = {
+      check = {
+        extraArgs = {"-r"}
+      }
+    }
   },
 }
 
@@ -62,6 +66,8 @@ lspconfig["prismals"].setup {
 }
 
 lspconfig["dartls"].setup {}
+
+lspconfig["svelte"].setup {}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
