@@ -1,11 +1,12 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
-  run = ':TSUpdate',
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
   config = function()
     local ts = require "nvim-treesitter.configs"
 
     ts.setup {
-      auto_install = true,
+      auto_install = false,
+      sync_install = false,
       highlight = {
         enable = true,
         disable = {},
@@ -29,6 +30,7 @@ return {
       },
       autotag = {
         enable = true,
+        enable_close_on_slash = false,
       },
     }
 

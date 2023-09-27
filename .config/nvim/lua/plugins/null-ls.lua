@@ -12,7 +12,7 @@ return {
         nlsb.diagnostics.jsonlint,
 
         -- formatting
-        nlsb.formatting.dprint.with({
+        nlsb.formatting.prettierd.with({
           filetypes = {
             "javascript",
             "javascriptreact",
@@ -21,10 +21,6 @@ return {
             "json",
             "markdown",
             "toml",
-          }
-        }),
-        nlsb.formatting.prettierd.with({
-          filetypes = {
             "css",
             "scss",
             "less",

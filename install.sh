@@ -11,7 +11,8 @@ ln -s ~/dotfiles/.config/kitty/ ~/.config/kitty/
 # Neovim
 
 mkdir ~/.config/nvim
-ln -s ~/dotfiles/.config/nvim/lua/ ~/.config/nvim/lua/
+ln -s ~/dotfiles/.config/nvim/init.lua ~/.config/nvim/
+ln -s ~/dotfiles/.config/nvim/lua/ ~/.config/nvim/
 
 # Snippets
 
