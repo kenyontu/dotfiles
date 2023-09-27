@@ -17,7 +17,6 @@ return {
         "eslint",
         "cssls",
         "emmet_ls",
-        "rust_analyzer"
       },
     }
   end
