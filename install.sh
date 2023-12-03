@@ -6,7 +6,7 @@ ln -sf ~/dotfiles/.prettierrc ~
 
 # Kitty
 
-ln -s ~/dotfiles/.config/kitty/ ~/.config/kitty/
+ln -s ~/dotfiles/.config/kitty/ ~/.config/
 
 # Neovim
 
