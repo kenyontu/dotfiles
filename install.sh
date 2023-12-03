@@ -24,6 +24,9 @@ ln -sf ~/dotfiles/.config/nvim/vscode-snippets/package.json ~/.config/nvim/vscod
 mkdir ~/.config/ranger
 ln -s ~/dotfiles/.config/ranger/ ~/.config/ranger/
 
+# Starship
+ln -s ~/dotfiles/.config/starship.toml ~/.config/starship.toml
+
 # Python packages
 
 # https://github.com/hhatto/autopep8
