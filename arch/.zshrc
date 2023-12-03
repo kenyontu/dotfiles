@@ -8,7 +8,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="refined"
+# ZSH_THEME="refined"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -103,7 +103,10 @@ plugins=(git zsh-autosuggestions)
 # Use powerline
 USE_POWERLINE="true"
 
+# Env variables
+export PATH=~/bin:$PATH
 export EDITOR=nvim
+export VISUAL="nvim"
 
 # Aliases
 alias bs="browser-sync start --server --files \".\""
@@ -115,13 +118,42 @@ alias dot="cd ~/dotfiles/;nvim ."
 alias tw="the-way search"
 alias twa="the-way new"
 
+alias ta="tmux a"
+alias tl="tmux ls"
+
 # Taskwarrior aliases
-alias t="task"
-alias ta="task add"
-alias tn="while true; do clear && task next limit:5; sleep 5; done"
+#alias t="task"
+#alias ta="task add"
+#alias tn="while true; do clear && task next limit:5; sleep 5; done"
 
-# pacmd aliases
-alias sinks="pacmd list-sinks | awk '/index:/ {print \$0} /name:/ {print \$0};'"
-alias ssink="pacmd set-default-sink"
+# pactl aliases
+# For managing audio interfaces
+alias sinks="pactl list sinks short"
+alias ssink="pactl set-default-sink"
 
-export PATH=~/bin:$PATH
+alias vol0="pactl set-sink-volume @DEFAULT_SINK@ 0.0"
+alias vol5="pactl set-sink-volume @DEFAULT_SINK@ 0.05"
+alias vol10="pactl set-sink-volume @DEFAULT_SINK@ 0.1"
+alias vol20="pactl set-sink-volume @DEFAULT_SINK@ 0.2"
+alias vol30="pactl set-sink-volume @DEFAULT_SINK@ 0.3"
+alias vol40="pactl set-sink-volume @DEFAULT_SINK@ 0.4"
+alias vol50="pactl set-sink-volume @DEFAULT_SINK@ 0.5"
+alias vol60="pactl set-sink-volume @DEFAULT_SINK@ 0.6"
+alias vol70="pactl set-sink-volume @DEFAULT_SINK@ 0.7"
+alias vol80="pactl set-sink-volume @DEFAULT_SINK@ 0.8"
+alias vol90="pactl set-sink-volume @DEFAULT_SINK@ 0.9"
+alias vol100="pactl set-sink-volume @DEFAULT_SINK@ 1.0"
+alias svol="pactl set-sink-volume @DEFAULT_SINK@"
+
+# Keyboard aliases
+alias kbint="setxkbmap us -variant intl"
+alias kb="setxkbmap us -variant \"\""
+
+# Setup cargo
+. "$HOME/.cargo/env"
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/github-ssh
+
+# Set starship as prompt
+eval "$(starship init zsh)"
