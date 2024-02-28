@@ -17,7 +17,8 @@ return {
         svelte = { { "prettierd", "prettier" } },
         rust = { "rustfmt" },
         css = { { "prettierd", "prettier" } },
-        dart = { "dart_fmt" }
+        dart = { "dart_fmt" },
+        vue = { { "prettierd", "prettier" } },
       },
       formatters = {
         rustfmt = {
