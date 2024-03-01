@@ -21,12 +21,14 @@ return {
         "json",
         "yaml",
         "css",
+        "scss",
         "html",
         "lua",
         "rust",
         "markdown",
         "markdown_inline",
-        "svelte"
+        "svelte",
+        "vue"
       },
       autotag = {
         enable = true,
