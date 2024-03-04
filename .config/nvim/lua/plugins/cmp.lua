@@ -7,6 +7,7 @@ return {
     'saadparwaiz1/cmp_luasnip',
     'onsails/lspkind-nvim',
   },
+  build = "make install_jsregexp",
   config = function()
     local has_words_before = function()
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))

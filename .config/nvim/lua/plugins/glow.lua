@@ -1,5 +1,5 @@
 return {
   "ellisonleao/glow.nvim",
-  config = function()
-  end
+  config = true,
+  cmd = "Glow"
 }
