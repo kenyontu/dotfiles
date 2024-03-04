@@ -19,6 +19,7 @@ return {
         css = { { "prettierd", "prettier" } },
         dart = { "dart_fmt" },
         vue = { { "prettierd", "prettier" } },
+        php = { "phpcbf" },
       },
       formatters = {
         rustfmt = {

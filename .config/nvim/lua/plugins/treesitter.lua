@@ -28,7 +28,8 @@ return {
         "markdown",
         "markdown_inline",
         "svelte",
-        "vue"
+        "vue",
+        "php",
       },
       autotag = {
         enable = true,

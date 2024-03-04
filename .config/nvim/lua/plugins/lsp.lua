@@ -77,6 +77,14 @@ return {
 
     lspconfig["volar"].setup {}
 
+    lspconfig["phpactor"].setup {
+      n_attach = on_attach,
+      init_options = {
+        ["language_server_phpstan.enabled"] = false,
+        ["language_server_psalm.enabled"] = false,
+      }
+    }
+
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       vim.lsp.diagnostic.on_publish_diagnostics, {
         underline = true,
