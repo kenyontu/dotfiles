@@ -52,6 +52,18 @@ keymap("n", "<leader>d", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
 -- Disabling keybinds that I don't use to avoid misclicks
 keymap('n', 'Q', '<Nop>', opts)
 keymap('n', 'q', '<Nop>', opts)
+keymap('i', '<F1>', '<Nop>', opts)
+keymap('i', '<F2>', '<Nop>', opts)
+keymap('i', '<F3>', '<Nop>', opts)
+keymap('i', '<F4>', '<Nop>', opts)
+keymap('i', '<F5>', '<Nop>', opts)
+keymap('i', '<F6>', '<Nop>', opts)
+keymap('i', '<F7>', '<Nop>', opts)
+keymap('i', '<F8>', '<Nop>', opts)
+keymap('i', '<F9>', '<Nop>', opts)
+keymap('i', '<F10>', '<Nop>', opts)
+keymap('i', '<F11>', '<Nop>', opts)
+keymap('i', '<F12>', '<Nop>', opts)
 
 -- Runs :w when typing :W 
 vim.api.nvim_create_user_command('W', 'w', {})
