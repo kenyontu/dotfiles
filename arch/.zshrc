@@ -108,6 +108,17 @@ export PATH=~/bin:$PATH
 export EDITOR=nvim
 export VISUAL="nvim"
 
+# Functions
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+
 # Aliases
 alias bs="browser-sync start --server --files \".\""
 alias gs="git status"
@@ -120,6 +131,9 @@ alias twa="the-way new"
 
 alias ta="tmux a"
 alias tl="tmux ls"
+
+alias t="task"
+alias tn"task add"
 
 # Taskwarrior aliases
 #alias t="task"
@@ -157,3 +171,6 @@ ssh-add ~/.ssh/github-ssh
 
 # Set starship as prompt
 eval "$(starship init zsh)"
+
+# Turso
+export PATH="/home/k/.turso:$PATH"
