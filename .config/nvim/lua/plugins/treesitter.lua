@@ -30,6 +30,7 @@ return {
         "svelte",
         "vue",
         "php",
+        "go"
       },
       autotag = {
         enable = true,
