@@ -47,10 +47,12 @@ return {
     local keymap = vim.keymap.set
     local opts = { noremap = true, silent = true }
 
-    keymap("n", "<C-p>", [[<Cmd>lua require("telescope.builtin").git_files()<CR>]], opts)
+    --keymap("n", "<C-p>", [[<Cmd>lua require("telescope.builtin").git_files()<CR>]], opts)
     -- File browser
     keymap("n", "-", [[<Cmd>lua require("telescope").extensions.file_browser.file_browser({})<CR>]], opts)
     -- Aerial
-    keymap("n", "<space>o", [[<Cmd>lua require("telescope").extensions.aerial.aerial()<CR>]], opts)
+    keymap("n", "<space>fo", [[<Cmd>lua require("telescope").extensions.aerial.aerial()<CR>]], opts)
+    keymap('n', '<space>ff', builtin.find_files, opts)
+    keymap('n', '<space>fg', builtin.live_grep, opts)
   end
 }
