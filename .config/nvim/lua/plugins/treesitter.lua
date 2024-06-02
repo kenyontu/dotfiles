@@ -16,6 +16,7 @@ return {
         disable = {},
       },
       ensure_installed = {
+        "javascript",
         "tsx",
         "toml",
         "json",
@@ -31,10 +32,6 @@ return {
         "vue",
         "php",
         "go"
-      },
-      autotag = {
-        enable = true,
-        enable_close_on_slash = false,
       },
     }
 

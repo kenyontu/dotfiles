@@ -34,9 +34,15 @@ return {
           hijack_netrw = true,
           hide_parent_dir = true,
           hidden = true,
-          initial_mode = "normal"
+          initial_mode = "normal",
+          no_ignore = true,
         },
       },
+      pickers = {
+        find_files = {
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/{.git,node_modules}/*" },
+        }
+      }
     }
 
     telescope.load_extension("file_browser")

@@ -77,6 +77,7 @@ return {
 
     lspconfig["volar"].setup {}
 
+    --[[
     lspconfig["phpactor"].setup {
       n_attach = on_attach,
       init_options = {
@@ -84,6 +85,9 @@ return {
         ["language_server_psalm.enabled"] = false,
       }
     }
+    ]]--
+    
+    lspconfig["phpactor"].setup {}
 
     lspconfig["gopls"].setup {}
 

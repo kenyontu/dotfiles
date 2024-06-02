@@ -8,7 +8,7 @@ return {
       sources = {
         -- diagnostics
         nlsb.diagnostics.eslint,
-        nlsb.diagnostics.write_good, -- for markdown
+        -- nlsb.diagnostics.write_good, -- for markdown
         nlsb.diagnostics.jsonlint,
       },
     })

@@ -4,7 +4,7 @@ return {
   -- Snippets
   --
 
-  'ggandor/leap.nvim',
+  --'ggandor/leap.nvim',
 
   -- Comment
   "terrortylor/nvim-comment",
