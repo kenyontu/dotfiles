@@ -19,6 +19,7 @@ return {
         css = { { "prettierd", "prettier" } },
         dart = { "dart_fmt" },
         vue = { { "prettierd", "prettier" } },
+        php = { { "prettierd", "prettier" } },
       },
       formatters = {
         rustfmt = {
@@ -29,9 +30,14 @@ return {
           command = "rustfmt",
           args = { "--edition", "2021" } 
         }
-      }
+      },
+      --format_on_save = {
+      --  timeout_ms = 500,
+      --  lsp_fallback = true,
+      --},
     }) 
 
+   
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*",
       callback = function(args)
