@@ -108,11 +108,22 @@ export PATH=~/bin:$PATH
 export EDITOR=nvim
 export VISUAL="nvim"
 
+# Functions
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+
 # Aliases
 alias bs="browser-sync start --server --files \".\""
 alias gs="git status"
-alias pr="node ~/utils/px-to-rem.js"
-alias fo="node ~/utils/file-organizer.js"
+alias pr="node ~/cli-utils/px-to-rem.js"
+alias fo="node ~/cli-utils/file-organizer.js"
 alias dot="cd ~/dotfiles/;nvim ."
 
 alias tw="the-way search"
@@ -120,6 +131,12 @@ alias twa="the-way new"
 
 alias ta="tmux a"
 alias tl="tmux ls"
+
+alias t="task"
+alias tn"task add"
+
+# Trash-cli
+alias rm='echo "Use trash-put <file> instead."; false'
 
 # Taskwarrior aliases
 #alias t="task"
@@ -150,10 +167,13 @@ alias kbint="setxkbmap us -variant intl"
 alias kb="setxkbmap us -variant \"\""
 
 # Setup cargo
-. "$HOME/.cargo/env"
 
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github-ssh
 
 # Set starship as prompt
 eval "$(starship init zsh)"
+
+# Turso
+export PATH="/home/k/.turso:$PATH"
+

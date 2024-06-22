@@ -20,6 +20,7 @@ return {
         dart = { "dart_fmt" },
         vue = { { "prettierd", "prettier" } },
         php = { { "prettierd", "prettier" } },
+        go = { "gofmt" },
       },
       formatters = {
         rustfmt = {

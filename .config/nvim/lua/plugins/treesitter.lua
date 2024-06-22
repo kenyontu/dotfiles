@@ -16,6 +16,7 @@ return {
         disable = {},
       },
       ensure_installed = {
+        "javascript",
         "tsx",
         "toml",
         "json",
@@ -28,11 +29,9 @@ return {
         "markdown",
         "markdown_inline",
         "svelte",
-        "vue"
-      },
-      autotag = {
-        enable = true,
-        enable_close_on_slash = false,
+        "vue",
+        "php",
+        "go"
       },
     }
 
